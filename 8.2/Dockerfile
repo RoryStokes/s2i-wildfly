@@ -34,7 +34,7 @@ RUN INSTALL_PKGS="tar unzip bc which lsof java-1.8.0-openjdk java-1.8.0-openjdk-
 # Add s2i wildfly customizations
 # ADD ./contrib/wfmodules/ /wildfly/modules/ no modules included for 8.2
 ADD ./contrib/wfbin/standalone.conf /wildfly/bin/standalone.conf
-ADD ./contrib/wfcfg/standalone.xml /wildfly/standalone/configuration/standalone.xml
+ADD ./contrib/template/* /usr/local/share
 ADD ./contrib/settings.xml $HOME/.m2/
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH

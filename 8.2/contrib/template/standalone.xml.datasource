@@ -1,0 +1,16 @@
+                <datasource jndi-name="java:jboss/${RESOURCE}" pool-name="${RESOURCE}" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+                    <connection-url>${URL}</connection-url>
+                    <driver>oracle</driver>
+                    <security>
+                      <user-name>${USERNAME}</user-name>
+                      <password>${PASSWORD}</password>
+                    </security>
+                    <validation>
+                        <check-valid-connection-sql>SELECT 1 FROM dual</check-valid-connection-sql>
+                        <background-validation>true</background-validation>
+                        <background-validation-millis>60000</background-validation-millis>
+                    </validation>
+                    <pool>
+                        <flush-strategy>FailingConnectionOnly</flush-strategy>
+                    </pool>
+                </datasource>
