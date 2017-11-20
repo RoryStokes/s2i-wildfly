@@ -29,9 +29,8 @@ RUN INSTALL_PKGS="tar unzip bc which lsof java-1.8.0-openjdk java-1.8.0-openjdk-
     mkdir -p $HOME/.m2 && \
     mkdir -p /wildfly && \
     (curl -v https://download.jboss.org/wildfly/$WILDFLY_VERSION_BIN/wildfly-$WILDFLY_VERSION_BIN.tar.gz | tar -zx --strip-components=1 -C /wildfly) && \
-    mkdir -p /opt/s2i/destination
-
-RUN mkdir -p /usr/local/share
+    mkdir -p /opt/s2i/destination && \
+    mkdir -p /usr/local/share
 
 # Add s2i wildfly customizations
 # ADD ./contrib/wfmodules/ /wildfly/modules/ no modules included for 8.2
@@ -44,7 +43,8 @@ COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 
 RUN chown -R 1001:0 /wildfly && chown -R 1001:0 $HOME && \
     chmod -R ug+rw /wildfly && \
-    chmod -R g+rw /opt/s2i/destination
+    chmod -R g+rw /opt/s2i/destination && \
+    chmod -R g+rw /usr/local/share
 
 USER 1001
 
