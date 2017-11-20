@@ -243,6 +243,7 @@ if [ -f $LOCAL_SOURCE_DIR/securitydomains.xml ]; then
   echo "Copying extra security domains from project..."
 
   cp -v $LOCAL_SOURCE_DIR/securitydomains.xml /usr/local/share
+fi
 
 configure_proxy
 configure_mirrors
