@@ -28,9 +28,9 @@ def main():
         try:
             values['URL'] = read_secret(resource_dir, resource, 'url')
         except Exception:
-            host = read_secret(resurce_dir, resource, 'host')
-            port = read_secret(resurce_dir, resource, 'port')
-            name = read_secret(resurce_dir, resource, 'name')
+            host = read_secret(resource_dir, resource, 'host')
+            port = read_secret(resource_dir, resource, 'port')
+            name = read_secret(resource_dir, resource, 'name')
             values['URL']  = 'jdbc:oracle:thin:@' + host + ':' + port + ':' + name
 
         datasources.append(datasource_template.safe_substitute(values))
