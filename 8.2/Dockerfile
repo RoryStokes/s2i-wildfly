@@ -44,7 +44,7 @@ COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 RUN chown -R 1001:0 /wildfly && chown -R 1001:0 $HOME && \
     chmod -R ug+rw /wildfly && \
     chmod -R g+rw /opt/s2i/destination && \
-    chown -R 1001:0 /usr/local/share && chmod -R ug+rw /usr/local/share
+    chmod -R g+rw /usr/local/share
 
 USER 1001
 
