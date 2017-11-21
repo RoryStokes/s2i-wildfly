@@ -1,4 +1,4 @@
-                <datasource jndi-name="java:jboss/${RESOURCE}" pool-name="${RESOURCE}" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+                <datasource jndi-name="java:/jdbc/${RESOURCE}" pool-name="${RESOURCE}" enabled="true" jta="true" use-java-context="true" use-ccm="true">
                     <connection-url>${URL}</connection-url>
                     <driver>oracle</driver>
                     <security>
