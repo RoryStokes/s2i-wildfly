@@ -139,7 +139,7 @@
             <datasources>
 ${DATASOURCES}
                 <drivers>
-                    <driver name="com.oracle" module="com.oracle">
+                    <driver name="oracle" module="com.oracle.ojdbc7">
                         <driver-class>
                             oracle.jdbc.OracleDriver
                         </driver-class>
